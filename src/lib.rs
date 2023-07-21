@@ -1,5 +1,5 @@
 //! Secrets is a simple library for retrieving environment specific
-//! variables. It's basically dotenv so you probably wanna use that instead.
+//! variables. It's basically `dotenv` so you probably wanna use that instead.
 //! This library is designed to only work with utf8 characters.
 
 use std::collections::HashMap;
