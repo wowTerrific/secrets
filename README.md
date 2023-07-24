@@ -6,7 +6,7 @@ This library is designed to only work with utf8 characters.
 
 ## Usage
 Create a secret instance and use like so:
-```
+```rust
 use secrets::Secret;
 
 let secrets = Secret::new("./tests/data/.secret");
