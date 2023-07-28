@@ -35,7 +35,7 @@ impl Secret {
         let query = &self.data.get(key);
 
         if let Some(val) = query {
-            return String::from(*val);
+            String::from(*val)
         } else {
             panic!("value does not exist for {:?}", key);
         }
@@ -49,7 +49,7 @@ fn parse_file(path: &str) -> HashMap<String, String> {
 
     for line in secret_file.lines() {
 
-        if line.contains("=") {
+        if line.contains('=') {
             let (key, value) = separate_values_by_eq(line);
             value_map.insert(key, value);
         }
@@ -59,7 +59,7 @@ fn parse_file(path: &str) -> HashMap<String, String> {
 }
 
 fn separate_values_by_eq(line: &str) -> (String, String) {
-    let mut key_value = line.split('=').into_iter();
+    let mut key_value = line.split('=');
     let fail_message = "\nCould not parse `.secret` file.\nPlease check format and try again...";
 
     let key = key_value.next().expect(fail_message).trim();
